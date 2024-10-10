@@ -1,0 +1,66 @@
+Tudor Maria - Elena 311CA
+Tema 1
+Programarea Calculatoarelor si Limbaje de Programare
+
+Problema 1 - Un produs infinit
+
+Se citesc cei doi vectori, pentru care se calculeaza produl scalar,
+al doilea maxim si norma.
+Cele doua functii power_8 si schimba_baza sunt folosite pentru a transforma
+numerele citite din baza 8 in baza 10. Acest lucru este necesar pentru a
+realiza cu usurinta calculele cerute.
+Produsul scalar si norma sunt calculate conform formulelor matematice, iar
+al doilea maxim este gasit in functie de primul maxim, astfel: la inceput
+sunt initializate ambele cu -1, dupa care se cauta un numar mai mare
+decat primul maxim. Cand se gaseste, al doilea maxim va capata valoarea
+veche a primului maxim, acesta luand valoarea numarului gasit. Mai departe,
+daca exista un numar in intervalul deschis al acestor doua valori, atunci
+el va deveni al doilea maxim.
+
+Problema 2 - Simple query pe litere
+
+In functia main, se citesc literele pe rand, pana la aparitia unei litere
+majuscula, care este diferita de cele 3 litere ce efectueaza operatii. Pentru
+fiecare litera mica, valoarea asociata ei in vectorul de frecventa creste,
+precum si contorul ce poate declansa alerta. Cand acesta este mai mare sau
+egal cu 5, se apeleaza functia alerta, ce verifica daca numarul de aparitii
+al unei litere este mai mare decat jumatate din numarul total de aparitii,
+precum si daca au fost citite cel putin doua litere distincte. Cand alerta este
+valida, se apeleaza functia fractie_ireductibila, ce transforma in fractie
+ireductibila o fractie oarecare, apeland functia cmmdc, pentru a afla cel
+mai mare divizor comun.
+Functia top se apeleaza cand este citita litera T si sorteaza un vector copie
+al celui de frecventa in ordine descrescatoare, dupa care compara rezultatele
+pentru a afisa in ordine lexicografica literele cu acelasi numar de aparitii,
+daca este cazul.
+
+Problema 3 - Gigel si tabla de sah
+
+In functia main, se citeste matricea asociata tablei de sah prin apelarea
+functiei read_matrix. Distanta parcursa este calculata prin adunarea modulelor
+numerelor citite pe tabla de sah. Functia move returneaza noua valoare a liniei
+sau coloanei pe care se face mutarea. Aceasta functioneaza astfel: coloana sau
+linia se va modifica prin adunare cu restul impartirii numarului de pe bilet la
+n (datorita structurii toroidale, dupa n mutari a cate 1 linie/coloana, vom
+ajunge in aceeasi pozitie). Daca noul numar depaseste capetele matricei (0 sau
+n - 1), atunci, in functie de caz se scade n (pentru un numar pozitiv) sau se
+aduna n (pentru un numar negativ).
+La final, este apelata si functia transform_in_letters pentru a afisa
+corespunzator notatiei de pe tabla de sah.
+
+Problema 4 - Queries again
+
+In functia main, se citeste matricea asociata jocului de sudoku prin apelarea
+functiei read_matrix. Se citesc operatiile necesare, iar pentru fiecare dintre
+ele se apeleaza, dupa caz, functia op1, op2, op3, op4, op5 sau op6.
+Functiile op1, op2, respectiv op3 realizeaza operatiile corespunzatoare folosind un
+vector de frecventa pentru a afla ce numere exista deja pe linia, coloana,
+respectiv careul cerut, dupa care completeaza intr-un vector cu valorile 1 si 0,
+conform cerintei.
+Functia op4 apeleaza functiile anterioare pentru a rezolva operatia 4, dar si
+functia det_careu, care determina careul in care se afla o anumita celula.
+Functia op5, rezolva operatia 5, inlocuind celulele libere, adica diferite de 0,
+cu valoarea ceruta.
+Functia op6 apeleaza functiile verify_line, verify_column si verify_careu pentru
+a verifica daca configuratia jocului este invalida sau nu. Daca rezultatele returnate
+de cele trei functii de verificare nu sunt identice, atunci configuratia este invalida.
